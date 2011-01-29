@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>sm_prjEpicerie</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+    <param-name>bdDriver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>bdConnStr</param-name>
+    <param-value>jdbc:mysql://localhost:3306/sm_bdepicerie?user=root&amp;password=root</param-value>
+  </context-param>
+  
+  <!-- Les table de la basse de bonnee sm_bdepicerie -->
+  <context-param>
+    <param-name>tableCategories</param-name>
+    <param-value>categories</param-value>
+  </context-param>
+  <context-param>
+    <param-name>tableClients</param-name>
+    <param-value>clients</param-value>
+  </context-param>
+  <context-param>
+    <param-name>tableCommandesclients</param-name>
+    <param-value>commandesclients</param-value>
+  </context-param>
+  <context-param>
+    <param-name>tableProduits</param-name>
+    <param-value>produits</param-value>
+  </context-param>
+  <context-param>
+    <param-name>tableProduitscommandes</param-name>
+    <param-value>produitscommandes</param-value>
+  </context-param>
+  
+  <servlet>
+    <description></description>
+    <display-name>TestConnection</display-name>
+    <servlet-name>TestConnection</servlet-name>
+    <servlet-class>com.isi.sm_prjEpicerie.controlleurs.TestConnection</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestConnection</servlet-name>
+    <url-pattern>/TestConnection</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ControlleurPrincipal</display-name>
+    <servlet-name>ControlleurPrincipal</servlet-name>
+    <servlet-class>com.isi.sm_prjEpicerie.controlleurs.ControlleurPrincipal</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControlleurPrincipal</servlet-name>
+    <url-pattern>/go</url-pattern>
+  </servlet-mapping>
+</web-app>
